@@ -1,0 +1,16 @@
+version: '3.0'
+services:
+    node-red:
+            image: nodered/node-red-docker:rpi
+            container_name: node-red
+            user: root
+            volumes:
+                    - "~/.node-red:/data"
+            devices:
+                    - "/dev/gpio:/dev/gpio"
+                    - "/dev/ttyAMA0:/dev/ttyAMA0"
+            privileged: true
+            tty: true
+            ports:
+                    - "1880:1880"
+            network_mode: "host"

@@ -5,7 +5,7 @@ services:
         container_name: nodered
         user: root
         volumes:
-            - ~/node-red-data:/data
+            - ./data:/data
         network_mode: "host"
         ports:
             - 1880:1880
